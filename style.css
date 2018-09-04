@@ -1,0 +1,81 @@
+body {
+  /* overflow: hidden; */
+  padding: 0;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+}
+
+.player-1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* margin: 15px;   */
+  width: 100%;
+}
+.player-1 .ui {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 30px;
+}
+
+/* field */
+.field-row {
+  display: flex;
+  background-color: rgb(91, 116, 116);
+  width: 100%;
+  min-height: 125px;
+  margin-bottom: 10px;
+  /* padding: 20px; */
+  /* margin: 5px; */
+}
+
+/* cards */
+.cards {
+  display: flex;
+  min-height: 125px;
+}
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 150px;
+  margin: 5px;
+  padding: 10px 20px 10px 20px;
+  background-color: rgb(151, 132, 143);
+} 
+.card .card-name {
+  width: inherit;
+  background-color: rgb(95, 81, 90);
+  padding: 3px;
+  font-weight: bold;
+  color: white;
+}
+.card div:not(:last-child) {
+  margin-bottom: 10px; 
+}
+.card .card-stats {
+  display: flex;
+  justify-content: space-between;
+}
+.card .card-stat {
+  background-color: rgb(211, 182, 199);
+  padding: 10px;
+  /* border: 1px solid transparent; */
+  border-radius: 50%;
+}
+.card .card-stat.mp {
+  background-color: rgb(167, 22, 107);
+  color: white;
+}
+.card .card-stat.atk {
+  background-color: rgb(44, 106, 0);
+  color: white;
+}
+.card .card-stat.atk-mp {
+  background-color: rgb(0, 106, 87);
+  color: white;
+}
