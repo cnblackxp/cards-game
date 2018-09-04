@@ -5,12 +5,10 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 12px;
 }
-
 .player-1 {
   position: absolute;
   bottom: 0;
   left: 0;
-  /* margin: 15px;   */
   width: 100%;
 }
 .player-1 .ui {
@@ -18,8 +16,27 @@ body {
   bottom: 0;
   right: 0;
   margin: 30px;
+  font-size: 24px;
+  background-color: blueviolet;
+  padding: 4px;
+  color: white;
 }
+.player-1 .ui button {
+  width: 100%;
+  background-color: rgb(199, 177, 219); 
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.player-1 .ui button:hover {
+  background-color: rgb(99, 23, 170);
+  color: white;
 
+}
 /* field */
 .field-row {
   display: flex;
@@ -27,10 +44,7 @@ body {
   width: 100%;
   min-height: 125px;
   margin-bottom: 10px;
-  /* padding: 20px; */
-  /* margin: 5px; */
 }
-
 /* cards */
 .cards {
   display: flex;

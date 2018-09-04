@@ -35,18 +35,27 @@ class Player {
     this.selector = selector;
     this.cardsContainerElement = document.querySelector(`.${this.selector} .cards`);
     this.rows = Array.from(document.querySelectorAll(`.${this.selector} .field-row`)).map(el => ({cards: [], element: el}));
-    console.log(this.rows);
+    // console.log(this.rows);
     this.cards = [];
-    this.mana = 5;
-    this.hp = 10;
     this.ui = {
       mana: document.querySelector(`.${this.selector} .ui .mana`),
       hp: document.querySelector(`.${this.selector} .ui .hp`),
     }
     console.log(this.ui);
 
+    this.onGameStart();
     this.onTurnStart();
     this.updateUI();
+  }
+  onGameStart() {
+    this.mana = 5;
+    this.hp = 10;
+    this.updateUI();
+    this.clearCards();
+    this.drawCard();
+    this.drawCard();
+    this.drawCard();
+    this.onTurnStart()
   }
   onTurnStart() {
     this.drewCard = false;
@@ -63,6 +72,12 @@ class Player {
     const card = Cards[randomCardIndex];
     this.addCardToHand(card);
     this.updateUI();
+  }
+  clearCards() {
+    for (let i = this.cards.length-1; i >= 0; i --) {
+      this.cards[i].element.remove();
+      this.cards.splice(i, 1);
+    }
   }
   addCardToHand(card) {
     let newCard = JSON.parse(JSON.stringify(card))
@@ -105,9 +120,13 @@ class Card {
 
 const player1 = new Player("player-1");
 
-player1.drawCard();
-player1.drawCard();
-player1.drawCard();
+function startGame() {
+  player1.onGameStart();
+}
+
+// player1.drawCard();
+// player1.drawCard();
+// player1.drawCard();
 
 
 
